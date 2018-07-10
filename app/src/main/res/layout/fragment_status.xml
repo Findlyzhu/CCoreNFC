@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    android:weightSum="1">
+
+    <ImageView
+        android:layout_marginTop="70dp"
+        android:layout_width="242dp"
+        android:layout_height="251dp"
+        android:src="@drawable/nfc"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:padding="5dp"
+        android:paddingBottom="5dp"
+        android:paddingEnd="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingStart="5dp"
+        android:paddingTop="5dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="请放置产品获取信息"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:layout_weight="0.24"
+        android:textColor="@android:color/background_dark"
+        android:textStyle="bold"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="#dddddd"/>
+
+    <LinearLayout
+        android:layout_width="232dp"
+        android:layout_height="28dp"
+        android:orientation="horizontal"
+        android:layout_margin="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:padding="5dp"
+        android:paddingBottom="5dp"
+        android:paddingEnd="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingStart="5dp"
+        android:paddingTop="5dp"
+        android:layout_gravity="center"
+        >
+        <ImageView
+            android:layout_width="77dp"
+            android:layout_height="27dp"
+            android:src="@drawable/logo"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="NFC防伪软件测试版"
+            android:textSize="15sp"
+            android:layout_gravity="center"
+            android:textColor="@android:color/holo_blue_bright"
+            android:textStyle="bold|italic"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="#dddddd"/>
+
+</LinearLayout>

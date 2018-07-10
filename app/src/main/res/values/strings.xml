@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CCore防伪软件</string>
+    <string name="action_exit">退出</string>
+    <string name="action_info">关于</string>
+    <string name="action_settings">设置</string>
+    <string name="btn_image">查看图片</string>
+    <string name="btn_vedio">查看视频</string>
+</resources>
