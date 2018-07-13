@@ -19,6 +19,7 @@ import com.ccore.ConstDef.MsgConstDef;
 import com.ccore.ConstDef.NetConstDef;
 import com.ccore.Until.OkHttpUntil.CallBackUtil;
 import com.ccore.Until.OkHttpUntil.OkhttpUtil;
+import com.ccore.jni.SKFJni;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -26,7 +27,7 @@ import java.util.Map;
 import okhttp3.Call;
 
 public class NFCInfoFragment extends Fragment {
-
+    private SKFJni          mskfjni;
     private TextView        mshow;
     private ProgressDialog progressDialog;
     private byte[]          msn;
@@ -46,6 +47,8 @@ public class NFCInfoFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mskfjni = new SKFJni();
+        mskfjni.SKF_ConnectDev();
         Message msg = handler.obtainMessage();
         msg.what = MsgConstDef.MSG_GETRANDOM;
         msg.sendToTarget();

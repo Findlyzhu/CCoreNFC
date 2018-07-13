@@ -9,11 +9,20 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk{
+            moduleName "libSKFJni"
+            ldLibs "log"
+        }
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    repositories{
+        flatDir{
+            dir 'libs'
         }
     }
 }
@@ -29,4 +38,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation files('libs/javastruct-0.1.jar')
+    //compile(name:'ccorelibrary-debug',ext:'aar')
+    //compile(name:'skfjni-debug',ext:'aar')
+    implementation project(':skfjni')
 }
