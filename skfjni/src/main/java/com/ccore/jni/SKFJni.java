@@ -3,26 +3,26 @@ package com.ccore.jni;
 import android.util.Log;
 
 /**
- * â”â”â”â”â”â”ç¥å…½å‡ºæ²¡â”â”â”â”â”â”
- * ã€€ã€€ â”â”“     â”â”“
- * ã€€ã€€â”â”›â”»â”â”â”â”â”â”›â”»â”“
- * ã€€ã€€â”ƒã€€ã€€ã€€ã€€ã€€ â”ƒ
- * ã€€ã€€â”ƒã€€ã€€â”ã€€ã€€ã€€â”ƒ
- * ã€€ã€€â”ƒã€€â”³â”›ã€€â”—â”³  â”ƒ
- * ã€€ã€€â”ƒã€€ã€€ã€€ã€€ã€€ â”ƒ
- * ã€€ã€€â”ƒã€€ã€€â”»ã€€ã€€ã€€â”ƒ
- * ã€€ã€€â”ƒã€€ã€€ã€€ã€€ã€€ â”ƒ
- * ã€€ã€€â”—â”â”“ã€€ã€€ã€€â”â”â”›ã€€Code is far away from bug with the animal protecting
- * ã€€ã€€ã€€ â”ƒã€€ã€€ã€€â”ƒ    ç¥å…½ä¿ä½‘,ä»£ç æ— bug
- * ã€€ã€€ã€€ã€€â”ƒã€€ã€€ã€€â”ƒ
- * ã€€ã€€ã€€ã€€â”ƒã€€ã€€ã€€â”—â”â”â”â”“
- * ã€€ã€€ã€€ã€€â”ƒã€€ã€€ã€€ã€€ã€€ã€€â”£â”“
- * ã€€ã€€ã€€ã€€â”ƒã€€ã€€ã€€ã€€ã€€ã€€â”â”›
- * ã€€ã€€ã€€ã€€â”—â”“â”“â”â”â”³â”“â”â”›
- * ã€€ã€€ã€€ã€€ â”ƒâ”«â”« â”ƒâ”«â”«
- * ã€€ã€€ã€€ã€€ â”—â”»â”› â”—â”»â”›
+ * ©¥©¥©¥©¥©¥©¥ÉñÊŞ³öÃ»©¥©¥©¥©¥©¥©¥
+ * ¡¡¡¡ ©³©·     ©³©·
+ * ¡¡¡¡©³©¿©ß©¥©¥©¥©¥©¥©¿©ß©·
+ * ¡¡¡¡©§¡¡¡¡¡¡¡¡¡¡ ©§
+ * ¡¡¡¡©§¡¡¡¡©¥¡¡¡¡¡¡©§
+ * ¡¡¡¡©§¡¡©×©¿¡¡©»©×  ©§
+ * ¡¡¡¡©§¡¡¡¡¡¡¡¡¡¡ ©§
+ * ¡¡¡¡©§¡¡¡¡©ß¡¡¡¡¡¡©§
+ * ¡¡¡¡©§¡¡¡¡¡¡¡¡¡¡ ©§
+ * ¡¡¡¡©»©¥©·¡¡¡¡¡¡©³©¥©¿¡¡Code is far away from bug with the animal protecting
+ * ¡¡¡¡¡¡ ©§¡¡¡¡¡¡©§    ÉñÊŞ±£ÓÓ,´úÂëÎŞbug
+ * ¡¡¡¡¡¡¡¡©§¡¡¡¡¡¡©§
+ * ¡¡¡¡¡¡¡¡©§¡¡¡¡¡¡©»©¥©¥©¥©·
+ * ¡¡¡¡¡¡¡¡©§¡¡¡¡¡¡¡¡¡¡¡¡©Ç©·
+ * ¡¡¡¡¡¡¡¡©§¡¡¡¡¡¡¡¡¡¡¡¡©³©¿
+ * ¡¡¡¡¡¡¡¡©»©·©·©³©¥©×©·©³©¿
+ * ¡¡¡¡¡¡¡¡ ©§©Ï©Ï ©§©Ï©Ï
+ * ¡¡¡¡¡¡¡¡ ©»©ß©¿ ©»©ß©¿
  * <p>
- * â”â”â”â”â”â”æ„Ÿè§‰èŒèŒå“’â”â”â”â”â”â”
+ * ©¥©¥©¥©¥©¥©¥¸Ğ¾õÃÈÃÈßÕ©¥©¥©¥©¥©¥©¥
  *
  * @Author Findly_zhu
  * @DATE 2018/7/12 8:53
@@ -35,22 +35,45 @@ public class SKFJni {
     }
 
     /**
-     * @Function: è¿æ¥è®¾å¤‡
+     * @Function: Ã¶¾ÙÉè±¸
+     * @param bPresent
+     * @param pbDevNameList
+     * @return
+     */
+    public native long SKF_EnumDev(boolean bPresent,byte[] pbDevNameList);
+
+    /**
+     * @Function: Á¬½ÓÉè±¸
      * @return
      */
     public native long SKF_ConnectDev();
 
     /**
-     * @Function: æ–­å¼€è®¾å¤‡
+     * @Function: »ñÈ¡Éè±¸ĞÅÏ¢
+     * @param info
+     * @return
+     */
+    public native long SKF_GetDevInfo(SKFType.DEVINFO info);
+
+    /**
+     * @Function: »ñÈ¡ÎÄ¼şÊôĞÔ
+     * @param szFileName
+     * @param FileInfo
+     * @return
+     */
+    public native long SKF_GetFileInfo(String szFileName, SKFType.FILEATTRIBUTE FileInfo);
+
+    /**
+     * @Function: ¶Ï¿ªÉè±¸
      * @return*/
     public native long SKF_DisconnectDev();
 
     /**
-     * @Function: è®¾ç½®åº”ç”¨è·¯å¾„
+     * @Function: ÉèÖÃÓ¦ÓÃÂ·¾¶
      * @param szAppPath
      * @return
      */
-    public native long SKF_SetAppPath(byte[] szAppPath);
+    public native long SKF_SetAppPath(String szAppPath);
 
     static {
         System.loadLibrary("SKFJni");

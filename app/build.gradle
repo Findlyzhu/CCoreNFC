@@ -37,8 +37,10 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.google.code.gson:gson:2.8.5'
-    implementation files('libs/javastruct-0.1.jar')
+    //implementation 'com.firebaseui:firebase-ui-auth:3.3.0'
+    //implementation files('libs/javastruct-0.1.jar')
     //compile(name:'ccorelibrary-debug',ext:'aar')
     //compile(name:'skfjni-debug',ext:'aar')
     implementation project(':skfjni')
+    implementation files('libs/javastruct-0.1.jar')
 }

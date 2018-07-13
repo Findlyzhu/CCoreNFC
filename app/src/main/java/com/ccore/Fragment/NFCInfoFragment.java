@@ -17,9 +17,11 @@ import android.widget.Toast;
 import com.ccore.Activity.R;
 import com.ccore.ConstDef.MsgConstDef;
 import com.ccore.ConstDef.NetConstDef;
+import com.ccore.Until.DCUtil;
 import com.ccore.Until.OkHttpUntil.CallBackUtil;
 import com.ccore.Until.OkHttpUntil.OkhttpUtil;
 import com.ccore.jni.SKFJni;
+import com.ccore.jni.SKFType;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,8 +30,9 @@ import okhttp3.Call;
 
 public class NFCInfoFragment extends Fragment {
     private SKFJni          mskfjni;
+    private SKFType         mskftype;
     private TextView        mshow;
-    private ProgressDialog progressDialog;
+    private ProgressDialog  progressDialog;
     private byte[]          msn;
     private static final String TAG = NFCInfoFragment.class.getSimpleName();
     @Nullable
@@ -48,7 +51,12 @@ public class NFCInfoFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mskfjni = new SKFJni();
-        mskfjni.SKF_ConnectDev();
+        mskftype = new SKFType();
+        SKFType.DEVINFO  devinfo = mskftype.new DEVINFO();
+        SKFType.FILEATTRIBUTE fileattribute = mskftype.new FILEATTRIBUTE();
+        mskfjni.SKF_GetDevInfo(devinfo);
+        mskfjni.SKF_GetFileInfo("test",fileattribute);
+        //String s = new String(fileattribute.fileName);
         Message msg = handler.obtainMessage();
         msg.what = MsgConstDef.MSG_GETRANDOM;
         msg.sendToTarget();
