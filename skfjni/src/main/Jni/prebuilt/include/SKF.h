@@ -1,3 +1,4 @@
+
 #ifndef __SKF_FUNC_H__
 #define __SKF_FUNC_H__
 
@@ -14,7 +15,7 @@
 #define DEVAPI __declspec(dllimport)  __cdecl
 #endif
 #else
-#define DEVAPI __stdcall //使用__cdecl在格尔的“国密介质检测工具V3.exe”调用后会崩溃
+#define DEVAPI __stdcall //使锟斤拷__cdecl锟节革拷锟斤拷摹锟斤拷锟斤拷芙锟斤拷始锟解工锟斤拷V3.exe锟斤拷锟斤拷锟矫猴拷锟斤拷锟斤拷
 #endif
 
 #endif

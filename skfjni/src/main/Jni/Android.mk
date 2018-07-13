@@ -19,6 +19,7 @@ LIB_NAME = libskf.so
 
 #第三方的编译模块
 include $(CLEAR_VARS)
+
 LOCAL_MODULE    := libskfMoudle
 #$(TARGET_ARCH_ABI),用于编译不同的平台SO文件
 LOCAL_SRC_FILES := $(LIB_PATH)/$(LIB_NAME)

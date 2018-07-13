@@ -1,5 +1,6 @@
 package com.ccore.jni;
 
+
 import android.util.Log;
 
 /**

@@ -52,6 +52,7 @@ public class NFCInfoFragment extends Fragment {
         super.onCreate(savedInstanceState);
         mskfjni = new SKFJni();
         mskftype = new SKFType();
+
         SKFType.DEVINFO  devinfo = mskftype.new DEVINFO();
         SKFType.FILEATTRIBUTE fileattribute = mskftype.new FILEATTRIBUTE();
         mskfjni.SKF_GetDevInfo(devinfo);

@@ -60,7 +60,7 @@ public class SKFType {
     public static final int PKCS5_PADDING			         = 1;
     public static final int NO_PADDING				         = 0;
 
-
+ 
     /**
      * @Function: 版本结构体
     **/

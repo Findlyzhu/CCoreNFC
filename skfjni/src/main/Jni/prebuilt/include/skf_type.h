@@ -8,6 +8,7 @@ typedef HANDLE	HAPPLICATION;
 typedef HANDLE	HCONTAINER;
 
 #ifndef _WIN32
+
 #define PACKED_ST(st) __attribute__((packed, aligned(1))) st
 #else
 #pragma pack(push, skf, 1)
@@ -106,12 +107,12 @@ typedef struct eccsignatureblob_st
 typedef ECCSIGNATUREBLOB  * PECCSIGNATUREBLOB;
 
 typedef struct SKF_ENVELOPEDKEYBLOB{
-	u32 Version;					// 当前版本为 1
-	u32 ulSymmAlgID;				// 对称算法标识，限定ECB模式
-	u32 ulBits;						// 加密密钥对的密钥位长度
-	u8  cbEncryptedPriKey[64];		// 加密密钥对私钥的密文
-	ECCPUBLICKEYBLOB PubKey;        // 加密密钥对的公钥
-	ECCCIPHERBLOB ECCCipherBlob;    // 用保护公钥加密的对称密钥密文。
+	u32 Version;					// 锟斤拷前锟芥本为 1
+	u32 ulSymmAlgID;				// 锟皆筹拷锟姐法锟斤拷识锟斤拷锟睫讹拷ECB模式
+	u32 ulBits;						// 锟斤拷锟斤拷锟斤拷钥锟皆碉拷锟斤拷钥位锟斤拷锟斤拷
+	u8  cbEncryptedPriKey[64];		// 锟斤拷锟斤拷锟斤拷钥锟斤拷私钥锟斤拷锟斤拷锟斤拷
+	ECCPUBLICKEYBLOB PubKey;        // 锟斤拷锟斤拷锟斤拷钥锟皆的癸拷钥
+	ECCCIPHERBLOB ECCCipherBlob;    // 锟矫憋拷锟斤拷锟斤拷钥锟斤拷锟杰的对筹拷锟斤拷钥锟斤拷锟侥★拷
 }PACKED_ST(ENVELOPEDKEYBLOB);
 typedef ENVELOPEDKEYBLOB  *  PENVELOPEDKEYBLOB;
 
@@ -158,80 +159,80 @@ typedef struct __cipher_param
 #define MAX_APPLICATION_NAME_LEN		16
 
 /* algorithm */
-#define SGD_SM1_ECB			0x00000101       //SM1 算法 ECB 加密模式 
-#define SGD_SM1_CBC			0x00000102       //SM1 算法 CBC 加密模式 
-#define SGD_SM1_CFB			0x00000104       //SM1 算法 CFB 加密模式 
-#define SGD_SM1_OFB			0x00000108       //SM1 算法 OFB 加密模式 
-#define SGD_SM1_MAC			0x00000110       //SM1 算法 MAC 运算 
-#define SGD_SSF33_ECB       0x00000201       //SSF33 算法 ECB 加密模式 
-#define SGD_SSF33_CBC       0x00000202       //SSF33 算法 CBC 加密模式 
-#define SGD_SSF33_CFB       0x00000204       //SSF33 算法 CFB 加密模式 
-#define SGD_SSF33_OFB       0x00000208       //SSF33 算法 OFB 加密模式 
-#define SGD_SSF33_MAC       0x00000210       //SSF33 算法 MAC 运算 
-#define SGD_SMS4_ECB		0x00000401       //SMS4 算法 ECB 加密模式 
-#define SGD_SMS4_CBC		0x00000402       //SMS4 算法 CBC 加密模式 
-#define SGD_SMS4_CFB		0x00000404       //SMS4 算法 CFB 加密模式 
-#define SGD_SMS4_OFB		0x00000408       //SMS4 算法 OFB 加密模式 
-#define SGD_SMS4_MAC		0x00000410       //SMS4 算法 MAC 运算 
+#define SGD_SM1_ECB			0x00000101       //SM1 锟姐法 ECB 锟斤拷锟斤拷模式 
+#define SGD_SM1_CBC			0x00000102       //SM1 锟姐法 CBC 锟斤拷锟斤拷模式 
+#define SGD_SM1_CFB			0x00000104       //SM1 锟姐法 CFB 锟斤拷锟斤拷模式 
+#define SGD_SM1_OFB			0x00000108       //SM1 锟姐法 OFB 锟斤拷锟斤拷模式 
+#define SGD_SM1_MAC			0x00000110       //SM1 锟姐法 MAC 锟斤拷锟斤拷 
+#define SGD_SSF33_ECB       0x00000201       //SSF33 锟姐法 ECB 锟斤拷锟斤拷模式 
+#define SGD_SSF33_CBC       0x00000202       //SSF33 锟姐法 CBC 锟斤拷锟斤拷模式 
+#define SGD_SSF33_CFB       0x00000204       //SSF33 锟姐法 CFB 锟斤拷锟斤拷模式 
+#define SGD_SSF33_OFB       0x00000208       //SSF33 锟姐法 OFB 锟斤拷锟斤拷模式 
+#define SGD_SSF33_MAC       0x00000210       //SSF33 锟姐法 MAC 锟斤拷锟斤拷 
+#define SGD_SMS4_ECB		0x00000401       //SMS4 锟姐法 ECB 锟斤拷锟斤拷模式 
+#define SGD_SMS4_CBC		0x00000402       //SMS4 锟姐法 CBC 锟斤拷锟斤拷模式 
+#define SGD_SMS4_CFB		0x00000404       //SMS4 锟姐法 CFB 锟斤拷锟斤拷模式 
+#define SGD_SMS4_OFB		0x00000408       //SMS4 锟姐法 OFB 锟斤拷锟斤拷模式 
+#define SGD_SMS4_MAC		0x00000410       //SMS4 锟姐法 MAC 锟斤拷锟斤拷 
 
-#define SGD_RSA				0x00010000       //RSA 算法 
-#define SGD_SM2_1			0x00020100       //椭圆曲线签名算法 
-#define SGD_SM2_2			0x00020200       //椭圆曲线密钥交换协议 
-#define SGD_SM2_3			0x00020400       //椭圆曲线加密算法 
+#define SGD_RSA				0x00010000       //RSA 锟姐法 
+#define SGD_SM2_1			0x00020100       //锟斤拷圆锟斤拷锟斤拷签锟斤拷锟姐法 
+#define SGD_SM2_2			0x00020200       //锟斤拷圆锟斤拷锟斤拷锟斤拷钥锟斤拷锟斤拷协锟斤拷 
+#define SGD_SM2_3			0x00020400       //锟斤拷圆锟斤拷锟竭硷拷锟斤拷锟姐法 
 
-#define SGD_SM3				0x00000001       //SM3 杂凑算法 
-#define SGD_SHA1			0x00000002       //SHA1 杂凑算法 
-#define SGD_SHA256			0x00000004       //SHA256 杂凑算法 
+#define SGD_SM3				0x00000001       //SM3 锟接达拷锟姐法 
+#define SGD_SHA1			0x00000002       //SHA1 锟接达拷锟姐法 
+#define SGD_SHA256			0x00000004       //SHA256 锟接达拷锟姐法 
 
 
 ////////////////////////////VENDOR DEFINED/////////////////////////////////////
-#define SGD_DES_ECB			0x80000101       //DES 算法 ECB 加密模式 
-#define SGD_DES_CBC			0x80000102       //DES 算法 CBC 加密模式 
-#define SGD_DES_CFB			0x80000104       //DES 算法 CFB 加密模式 
-#define SGD_DES_OFB			0x80000108       //DES 算法 OFB 加密模式 
-#define SGD_DES_MAC			0x80000110       //DES 算法 MAC 运算 
+#define SGD_DES_ECB			0x80000101       //DES 锟姐法 ECB 锟斤拷锟斤拷模式 
+#define SGD_DES_CBC			0x80000102       //DES 锟姐法 CBC 锟斤拷锟斤拷模式 
+#define SGD_DES_CFB			0x80000104       //DES 锟姐法 CFB 锟斤拷锟斤拷模式 
+#define SGD_DES_OFB			0x80000108       //DES 锟姐法 OFB 锟斤拷锟斤拷模式 
+#define SGD_DES_MAC			0x80000110       //DES 锟姐法 MAC 锟斤拷锟斤拷 
 
-#define SGD_AES_ECB			0x80000201       //AES 算法 ECB 加密模式 
-#define SGD_AES_CBC			0x80000202       //AES 算法 CBC 加密模式 
-#define SGD_AES_CFB			0x80000204       //AES 算法 CFB 加密模式 
-#define SGD_AES_OFB			0x80000208       //AES 算法 OFB 加密模式 
-#define SGD_AES_MAC			0x80000210       //AES 算法 MAC 运算 
+#define SGD_AES_ECB			0x80000201       //AES 锟姐法 ECB 锟斤拷锟斤拷模式 
+#define SGD_AES_CBC			0x80000202       //AES 锟姐法 CBC 锟斤拷锟斤拷模式 
+#define SGD_AES_CFB			0x80000204       //AES 锟姐法 CFB 锟斤拷锟斤拷模式 
+#define SGD_AES_OFB			0x80000208       //AES 锟姐法 OFB 锟斤拷锟斤拷模式 
+#define SGD_AES_MAC			0x80000210       //AES 锟姐法 MAC 锟斤拷锟斤拷 
 
-#define SGD_SM6_ECB			0x80000301       //SM6 算法 ECB 加密模式 
-#define SGD_SM6_CBC			0x80000302       //SM6 算法 CBC 加密模式 
-#define SGD_SM6_CFB			0x80000304       //SM6 算法 CFB 加密模式 
-#define SGD_SM6_OFB			0x80000308       //SM6 算法 OFB 加密模式 
-#define SGD_SM6_MAC			0x80000310       //SM6 算法 MAC 运算 
+#define SGD_SM6_ECB			0x80000301       //SM6 锟姐法 ECB 锟斤拷锟斤拷模式 
+#define SGD_SM6_CBC			0x80000302       //SM6 锟姐法 CBC 锟斤拷锟斤拷模式 
+#define SGD_SM6_CFB			0x80000304       //SM6 锟姐法 CFB 锟斤拷锟斤拷模式 
+#define SGD_SM6_OFB			0x80000308       //SM6 锟姐法 OFB 锟斤拷锟斤拷模式 
+#define SGD_SM6_MAC			0x80000310       //SM6 锟姐法 MAC 锟斤拷锟斤拷 
 ////////////////////////////VENDOR DEFINED/////////////////////////////////////
 
 #ifndef TRUE
-#define TRUE				1				//布尔值为真 
+#define TRUE				1				//锟斤拷锟斤拷值为锟斤拷 
 #endif
 #ifndef FALSE
-#define FALSE				0				//布尔值为假 
+#define FALSE				0				//锟斤拷锟斤拷值为锟斤拷 
 #endif
 
 #ifndef NULL
 #define NULL				0
 #endif
 
-#define ADMIN_TYPE			0				//管理员 PIN 类型 
-#define USER_TYPE			1				//用户 PIN 类型 
+#define ADMIN_TYPE			0				//锟斤拷锟斤拷员 PIN 锟斤拷锟斤拷 
+#define USER_TYPE			1				//锟矫伙拷 PIN 锟斤拷锟斤拷 
 
 
 /* account */
-#define SECURE_NEVER_ACCOUNT	0x00		//不允许 
-#define SECURE_ADM_ACCOUNT		0x01		//管理员权限 
-#define SECURE_USER_ACCOUNT		0x10		//用户权限 
-#define SECURE_ANYONE_ACCOUNT	0xFF		//任何人 
+#define SECURE_NEVER_ACCOUNT	0x00		//锟斤拷锟斤拷锟斤拷 
+#define SECURE_ADM_ACCOUNT		0x01		//锟斤拷锟斤拷员权锟斤拷 
+#define SECURE_USER_ACCOUNT		0x10		//锟矫伙拷权锟斤拷 
+#define SECURE_ANYONE_ACCOUNT	0xFF		//锟轿猴拷锟斤拷 
 
 #define MIN_PIN_LEN				0x06
 #define MAX_PIN_LEN				0x10
 
 
-#define DEV_ABSENT_STATE		0x00000000	  //设备不存在       
-#define DEV_PRESENT_STATE		0x00000001    //设备存在        
-#define DEV_UNKNOW_STATE		0x00000002    //设备状态未知    
+#define DEV_ABSENT_STATE		0x00000000	  //锟借备锟斤拷锟斤拷锟斤拷       
+#define DEV_PRESENT_STATE		0x00000001    //锟借备锟斤拷锟斤拷        
+#define DEV_UNKNOW_STATE		0x00000002    //锟借备状态未知    
 
 #ifndef PKCS5_PADDING
 #define PKCS5_PADDING			1
