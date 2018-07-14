@@ -10,26 +10,37 @@ HAPPLICATION * hAppHandle = NULL_PTR;
 HCONTAINER * hContainerHandle = NULL_PTR;
 
 JNIEXPORT jlong JNICALL Java_com_ccore_jni_SKFJni_SKF_1EnumDev
-        (JNIEnv * env, jobject thiz, jboolean bPresent,jbyteArray pbDevNameList){
+        (JNIEnv * env, jobject thiz, jboolean bPresent,jcharArray pbDevNameList){
     unsigned long uiRet = 0;
     unsigned int ulSize = 128;
-
-    jbyte * plist = (*env)->GetByteArrayElements(env, pbDevNameList, NULL);
+	LPSTR szNameList = "sdcard1";
+    //jbyte * plist = (*env)->GetByteArrayElements(env, pbDevNameList, NULL);
     LOGE("SKF_EnumDev_JNI----Enter");
-    while(TRUE){
-
-        uiRet = SKF_EnumDev(bPresent,(char*)plist,&ulSize);
+    while(FALSE){
+        uiRet = SKF_EnumDev(bPresent,NULL,&ulSize);
+        if(uiRet) {
+            LOGE("SKF_EnumDev End,uiRet = %d",uiRet);
+            break;
+        }
+        szNameList = (LPSTR)malloc(ulSize);
+        uiRet = SKF_EnumDev(bPresent,szNameList,&ulSize);
         if(uiRet) {
             LOGE("SKF_EnumDev End,uiRet = %d",uiRet);
             break;
         }
         LOGE("jbyteDevnameList = %s,ulSize = %d",plist,ulSize);
+        jchar* devlist = (jchar*)szNameList;
+        //(*env)->SetCharArrayRegion(env,pbDevNameList, 0, ulSize, devlist);
         //有可能只能返回第一个设备路径
         break;
-    }
-    LOGE("SKF_EnumDev_JNI----End,uiRet = %d",uiRet);
-    (*env)->ReleaseByteArrayElements(env, pbDevNameList, plist, 0);
 
+    }
+    ulSize = strlen(szNameList);
+    jchar* devlist = (jchar*)szNameList;
+    (*env)->SetCharArrayRegion(env,pbDevNameList, 0, ulSize, devlist);
+    LOGE("SKF_EnumDev_JNI----End,uiRet = %d",uiRet);
+    //(*env)->ReleaseByteArrayElements(env, pbDevNameList, plist, 0);
+    //if(szNameList) free(szNameList);
     return uiRet;
 }
 
@@ -122,26 +133,28 @@ JNIEXPORT jlong JNICALL Java_com_ccore_jni_SKFJni_SKF_1GetFileInfo
      while(FALSE){
          if(NULL_PTR == hDev){
              uiRet = SAR_DEVICE_REMOVED;
-             break;
+             goto err;
          }
          if(NULL_PTR == hAppHandle){
              uiRet = SAR_APPLICATION_NOT_EXISTS;
-             break;
+             goto err;
          }
          uiRet = SKF_GetFileInfo(hAppHandle,file,&fileAttribute);
-         if(uiRet) break;
+         if(uiRet) goto err;
 
          //设置FileAttribute对象属性
          uiRet = SetFileAttribute(env,objFileInfo,&fileAttribute);
-         if(uiRet) break;
+         if(uiRet) goto err;
          //Do SomeThing Here
          break;
      }
 
      //设置FileAttribute对象属性
      uiRet = SetFileAttribute(env,objFileInfo,&fileAttribute);
-     if(uiRet) return -1;
+     if(uiRet) goto err;
      LOGE("SKF_GetFileInfo_JNI----End,uiRet = %d",uiRet);
+err:
+     (*env)->ReleaseStringUTFChars(env,fileName,file);
      return uiRet;
  }
 
@@ -176,5 +189,6 @@ JNIEXPORT jlong JNICALL Java_com_ccore_jni_SKFJni_SKF_1SetAppPath(
 	uiRet = V_SetAppPath(appPath);
     if(appPath != NULL) free(appPath);
     LOGE("SKF_SetAppPath_JNI----return = %d",uiRet);
+    (*env)->ReleaseStringUTFChars(env,szAppPath,appPath);
 	return uiRet;
 }

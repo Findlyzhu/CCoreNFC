@@ -30,7 +30,8 @@
 #endif
 #define IF_ERROR_GOTO_END(x) if(x!=0) goto END;
 
-
+long SetStringValue(JNIEnv*  env,jobject jobj,char *paramchar);
+long SetIntegerValue(JNIEnv*  env,jobject jobj,jint paramInt);
 long SetDevInfo(JNIEnv* env ,jobject paramObj,PDEVINFO pdevinfo);
 long SetFileAttribute(JNIEnv* env ,jobject paramObj,PFILEATTRIBUTE pfileattribute);
 

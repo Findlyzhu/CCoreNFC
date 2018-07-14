@@ -1,82 +1,1 @@
-package com.ccore.jni;
-
-
-import android.util.Log;
-
-/**
- * ©¥©¥©¥©¥©¥©¥ÉñÊŞ³öÃ»©¥©¥©¥©¥©¥©¥
- * ¡¡¡¡ ©³©·     ©³©·
- * ¡¡¡¡©³©¿©ß©¥©¥©¥©¥©¥©¿©ß©·
- * ¡¡¡¡©§¡¡¡¡¡¡¡¡¡¡ ©§
- * ¡¡¡¡©§¡¡¡¡©¥¡¡¡¡¡¡©§
- * ¡¡¡¡©§¡¡©×©¿¡¡©»©×  ©§
- * ¡¡¡¡©§¡¡¡¡¡¡¡¡¡¡ ©§
- * ¡¡¡¡©§¡¡¡¡©ß¡¡¡¡¡¡©§
- * ¡¡¡¡©§¡¡¡¡¡¡¡¡¡¡ ©§
- * ¡¡¡¡©»©¥©·¡¡¡¡¡¡©³©¥©¿¡¡Code is far away from bug with the animal protecting
- * ¡¡¡¡¡¡ ©§¡¡¡¡¡¡©§    ÉñÊŞ±£ÓÓ,´úÂëÎŞbug
- * ¡¡¡¡¡¡¡¡©§¡¡¡¡¡¡©§
- * ¡¡¡¡¡¡¡¡©§¡¡¡¡¡¡©»©¥©¥©¥©·
- * ¡¡¡¡¡¡¡¡©§¡¡¡¡¡¡¡¡¡¡¡¡©Ç©·
- * ¡¡¡¡¡¡¡¡©§¡¡¡¡¡¡¡¡¡¡¡¡©³©¿
- * ¡¡¡¡¡¡¡¡©»©·©·©³©¥©×©·©³©¿
- * ¡¡¡¡¡¡¡¡ ©§©Ï©Ï ©§©Ï©Ï
- * ¡¡¡¡¡¡¡¡ ©»©ß©¿ ©»©ß©¿
- * <p>
- * ©¥©¥©¥©¥©¥©¥¸Ğ¾õÃÈÃÈßÕ©¥©¥©¥©¥©¥©¥
- *
- * @Author Findly_zhu
- * @DATE 2018/7/12 8:53
- * @Description This Class for SKF JNI
- **/
-public class SKFJni {
-    private String TAG = "SKF JAVA:";
-    public SKFJni() {
-        Log.e(TAG,"SKF JAVA IN...");
-    }
-
-    /**
-     * @Function: Ã¶¾ÙÉè±¸
-     * @param bPresent
-     * @param pbDevNameList
-     * @return
-     */
-    public native long SKF_EnumDev(boolean bPresent,byte[] pbDevNameList);
-
-    /**
-     * @Function: Á¬½ÓÉè±¸
-     * @return
-     */
-    public native long SKF_ConnectDev();
-
-    /**
-     * @Function: »ñÈ¡Éè±¸ĞÅÏ¢
-     * @param info
-     * @return
-     */
-    public native long SKF_GetDevInfo(SKFType.DEVINFO info);
-
-    /**
-     * @Function: »ñÈ¡ÎÄ¼şÊôĞÔ
-     * @param szFileName
-     * @param FileInfo
-     * @return
-     */
-    public native long SKF_GetFileInfo(String szFileName, SKFType.FILEATTRIBUTE FileInfo);
-
-    /**
-     * @Function: ¶Ï¿ªÉè±¸
-     * @return*/
-    public native long SKF_DisconnectDev();
-
-    /**
-     * @Function: ÉèÖÃÓ¦ÓÃÂ·¾¶
-     * @param szAppPath
-     * @return
-     */
-    public native long SKF_SetAppPath(String szAppPath);
-
-    static {
-        System.loadLibrary("SKFJni");
-    }
-}
+package com.ccore.jni;import android.util.Log;/** * â”â”â”â”â”â”ç¥å…½å‡ºæ²¡â”â”â”â”â”â” * ã€€ã€€ â”â”“     â”â”“ * ã€€ã€€â”â”›â”»â”â”â”â”â”â”›â”»â”“ * ã€€ã€€â”ƒã€€ã€€ã€€ã€€ã€€ â”ƒ * ã€€ã€€â”ƒã€€ã€€â”ã€€ã€€ã€€â”ƒ * ã€€ã€€â”ƒã€€â”³â”›ã€€â”—â”³  â”ƒ * ã€€ã€€â”ƒã€€ã€€ã€€ã€€ã€€ â”ƒ * ã€€ã€€â”ƒã€€ã€€â”»ã€€ã€€ã€€â”ƒ * ã€€ã€€â”ƒã€€ã€€ã€€ã€€ã€€ â”ƒ * ã€€ã€€â”—â”â”“ã€€ã€€ã€€â”â”â”›ã€€Code is far away from bug with the animal protecting * ã€€ã€€ã€€ â”ƒã€€ã€€ã€€â”ƒ    ç¥å…½ä¿ä½‘,ä»£ç æ— bug * ã€€ã€€ã€€ã€€â”ƒã€€ã€€ã€€â”ƒ * ã€€ã€€ã€€ã€€â”ƒã€€ã€€ã€€â”—â”â”â”â”“ * ã€€ã€€ã€€ã€€â”ƒã€€ã€€ã€€ã€€ã€€ã€€â”£â”“ * ã€€ã€€ã€€ã€€â”ƒã€€ã€€ã€€ã€€ã€€ã€€â”â”› * ã€€ã€€ã€€ã€€â”—â”“â”“â”â”â”³â”“â”â”› * ã€€ã€€ã€€ã€€ â”ƒâ”«â”« â”ƒâ”«â”« * ã€€ã€€ã€€ã€€ â”—â”»â”› â”—â”»â”› * <p> * â”â”â”â”â”â”æ„Ÿè§‰èŒèŒå“’â”â”â”â”â”â” * **/public class SKFJni {    private String TAG = "SKF JAVA:";    public SKFJni() {        Log.e(TAG,"SKF JAVA IN...");    }    /**     * @Function: æšä¸¾è®¾å¤‡     * @param bPresent     * @param pbDevNameList     * @return     */    public native long SKF_EnumDev(boolean bPresent,char[] pbDevNameList);    /**     * @Function: è¿æ¥è®¾å¤‡     * @return     */    public native long SKF_ConnectDev();    /**     * @Function: è·å–è®¾å¤‡ä¿¡æ¯     * @param info     * @return     */    public native long SKF_GetDevInfo(SKFType.DEVINFO info);    /**     * @Function: è·å–æ–‡ä»¶å±æ€§     * @param szFileName     * @param FileInfo     * @return     */    public native long SKF_GetFileInfo(String szFileName, SKFType.FILEATTRIBUTE FileInfo);    /**     * @Function: æ–­å¼€è®¾å¤‡     * @return*/    public native long SKF_DisconnectDev();    /**     * @Function: è®¾ç½®åº”ç”¨è·¯å¾„     * @param szAppPath     * @return     */    public native long SKF_SetAppPath(String szAppPath);    /**     * @Function: è®¾ç½®å¯†é’¥     * @param key     * @param algID     * @return     */    public native long SKF_SetSymmKey(byte[] key, int algID);    /**     * @Function: å¯¹ç§°ç®—æ³•åˆå§‹åŒ–     * @param param     * @return     */    public native long SKF_EncryptInit(SKFType.BLOCKCIPHERPARAM param);    /**     * @Function: å•ç»„å¯¹ç§°åŠ å¯†     * @param pbData     * @param ulDataLen     * @param pbEncryptedData     * @param pulEncryptedLen     * @return     */    public native long SKF_Encrypt(byte[] pbData, long ulDataLen,                                   byte[] pbEncryptedData, long[] pulEncryptedLen);    /**     * @Function: å¯¹ç§°åŠ å¯†Update     * @param pbData     * @param ulDataLen     * @param pbEncryptedData     * @param pulEncryptedLen     * @return     */    public native long SKF_EncryptUpdate(byte[] pbData, long ulDataLen,                                         byte[] pbEncryptedData, long[] pulEncryptedLen);    /**     * @Function: å¯¹ç§°åŠ å¯†Final     * @param pbEncryptedData     * @param pulEncryptedLen     * @return     */    public native long SKF_EncryptFinal(byte[] pbEncryptedData,                                        long[] pulEncryptedLen);    /**     * @Function: å¯¹ç§°è§£å¯†åˆå§‹åŒ–     * @param param     * @return     */    public native long SKF_DecryptInit(SKFType.BLOCKCIPHERPARAM param);    /**     * @Function: å•ç»„è§£å¯†     * @param pbData     * @param ulDataLen     * @param pbEncryptedData     * @param pulEncryptedLen     * @return     */    public native long SKF_Decrypt(byte[] pbData, long ulDataLen,                                   byte[] pbEncryptedData, long[] pulEncryptedLen);    /**     * @Function: å¯¹ç§°è§£å¯†Update     * @param pbData     * @param ulDataLen     * @param pbEncryptedData     * @param pulEncryptedLen     * @return     */    public native long SKF_DecryptUpdate(byte[] pbData, long ulDataLen,                                         byte[] pbEncryptedData, long[] pulEncryptedLen);    /**     * @Function: å¯¹ç§°è§£å¯†Final     * @param pbEncryptedData     * @param pulEncryptedLen     * @return     */    public native long SKF_DecryptFinal(byte[] pbEncryptedData,                                        long[] pulEncryptedLen);    /**     * @Function: è·å–è®¾å¤‡çŠ¶æ€     * @param szDevName     * @param ulDevState     * @return     */    public native long SKF_GetDevState(String szDevName,Integer ulDevState);    /**     * @Function: è®¾ç½®æ ‡ç­¾     * @param szLabelName     * @return     */    public native long SKF_SetLabel(String szLabelName);    /**     * @Function: é”å®šè®¾å¤‡     * @param ulTimeOut     * @return     */    public native long SKF_LockDev(int ulTimeOut);    /**     * @Function: è§£é”è®¾å¤‡     * @return     */    public native long SKF_UnlockDev();    /**     * @Function: é€ä¼ æŒ‡ä»¤     * @param pbCommand     * @param ulCommandLen     * @param pbData     * @param pulDataLen     * @return     */    public native long SKF_Transmit(byte[] pbCommand,long ulCommandLen,byte[] pbData,long pulDataLen);    /**     * @Function: æ”¹å˜è®¾å¤‡è®¤è¯å¯†é’¥     * @param pbKeyValue     * @param ulKeyLen     * @return     */    public native long SKF_ChangeDevAuthKey(byte[] pbKeyValue,long ulKeyLen);    /**     * @Function: è®¾å¤‡è®¤è¯     * @param pbAuthData     * @param ulLen     * @return     */    public native long SKF_DevAuth(byte[] pbAuthData,long ulLen);    /**     * @Function: æ”¹å˜PINç      * @param ulPinType     * @param szOldPin     * @param szNewPin     * @param pulRetry     * @return     */    public native long SKF_ChangePIN(int ulPinType,String szOldPin,String szNewPin,Integer pulRetry);    /**     * @Function: è·å–PINç ä¿¡æ¯     * @param ulPinType     * @param pulMaxRetryCount     * @param pulRemainRetryCount     * @param pbDefaultPin     * @return     */    public native long SKF_GetPINInfo(int ulPinType,Integer pulMaxRetryCount,                                      Integer pulRemainRetryCount, boolean[] pbDefaultPin);    /**     * @Function: éªŒè¯PINç      * @param ulPinType     * @param szOldPin     * @param pulRetry     * @return     */    public native long SKF_VerifyPIN(int ulPinType,String szOldPin,Integer pulRetry);    /**     * @Function: å¤åŸPIN ç      * @param szAdminPin     * @param szNewUserPin     * @param pulRetry     * @return     */    public native long SKF_UnblockPIN(byte[] szAdminPin,String szNewUserPin,Integer pulRetry);    /**     * @Function: æ¸…æ¥šå®‰å…¨çŠ¶æ€     * @return     */    public native long SKF_ClearSecureState();    /**     * @Function: åˆ›å»ºåº”ç”¨     * @param szAppName     * @param szNewUserPin     * @param ulAdminPinRetry     * @param szAdminPin     * @param ulUserPinRetry     * @param ulCreateFileRights     * @return     */    public native long SKF_CreateApplication(byte[] szAppName,byte[] szNewUserPin,long ulAdminPinRetry,byte[] szAdminPin,long ulUserPinRetry,long ulCreateFileRights);    /**     * @Function: æšä¸¾åº”ç”¨     * @param szAppName     * @param pulSize     * @return     */    public native long SKF_EnumApplication(byte[] szAppName,Integer pulSize);    /**     * @Function: åˆ é™¤åº”ç”¨     * @param szAppName     * @return     */    public native long SKF_DeleteApplication(byte[] szAppName);    /**     * @Function: æ‰“å¼€åº”ç”¨     * @param szAppName     * @return     */    public native long SKF_OpenApplication(byte[] szAppName);    /**     * @Function: å…³é—­åº”ç”¨     * @return     */    public native long SKF_CloseApplication();    /**     * @Function: åˆ›å»ºæ–‡ä»¶     * @param szFileName     * @param ulFileSize     * @param ulReadRights     * @param ulWriteRights     * @return     */    public native long SKF_CreateFile(byte[] szFileName, long ulFileSize,long ulReadRights,long ulWriteRights);    /**     * @Function: åˆ é™¤æ–‡ä»¶     * @param szFileName     * @return     */    public native long SKF_DeleteFile(byte[] szFileName);    /**     * @Function: æšä¸¾æ–‡ä»¶     * @param szFileList     * @param FileListSize     * @return     */    public native long SKF_EnumFiles(byte[] szFileList,Integer FileListSize);    /**     * @Function: è¯»å–æ–‡ä»¶å†…å®¹     * @param szFileName     * @param offSet     * @param Size     * @param pbOutData     * @param OutDataLen     * @return     */    public native long SKF_ReadFile(byte[] szFileName,long offSet,long Size,byte[] pbOutData,Integer OutDataLen);    /**     * @Function: å†™å…¥æ–‡ä»¶å†…å®¹     * @param szFileName     * @param ulOffset     * @param pbData     * @param ulSize     * @return     */    public native long SKF_WriteFile(byte[] szFileName, long ulOffset, byte[] pbData, long ulSize);    /**     * @Function: åˆ›å»ºå®¹å™¨     * @param szContainerName     * @return     */    public native long SKF_CreateContainer(byte[] szContainerName);    /**     * @Function: åˆ é™¤å®¹å™¨     * @param szContainerName     * @return     */    public native long SKF_DeleteContainer(byte[] szContainerName);    /**     * @Function: æ‰“å¼€å®¹å™¨     * @param szContainerName     * @return     */    public native long SKF_OpenContainer(byte[] szContainerName);    /**     * @Function: å…³é—­å®¹å™¨     * @return     */    public native long SKF_CloseContainer();    /**     * @Function: æšä¸¾å®¹å™¨     * @param szContainerName     * @param CountainerSize     * @return     */    public native long SKF_EnumContainer(byte[] szContainerName,Integer CountainerSize);    /**     * @Function: è·å–å®¹å™¨ç±»å‹     * @param ContainerType     * @return     */    public native long SKF_GetContainerType(Integer ContainerType);    /**     * @Function: è·å–éšæœºæ•°     * @param pbRandom     * @param ContainerType     * @return     */    public native long SKF_GenRandom(byte[] pbRandom,int ContainerType);    /**     * @Function: è·å–å¤–éƒ¨å¯†é’¥     * @param ulBitlen     * @param Blob     * @return     */    public native long SKF_GenExtRSAKey(int ulBitlen, SKFType.RSAPRIVATEKEYBLOB Blob);    /**     * @Function: ç”ŸæˆRSAå¯†é’¥å¯¹     * @param ulBitlen     * @param Blob     * @return     */    public native long SKF_GenRSAKeyPair(int ulBitlen, SKFType.RSAPRIVATEKEYBLOB Blob);    /**     * @Function: å¯¼å…¥RSAå¯†é’¥å¯¹     * @param ulSymAlgId     * @param pbWrappedKey     * @param ulWrappedKeyLen     * @param pbEncryptedData     * @param ulEncryptedDataLen     * @return     */    public native long SKF_ImportRSAKeyPair(int ulSymAlgId, byte[] pbWrappedKey, int ulWrappedKeyLen,byte[] pbEncryptedData,int ulEncryptedDataLen);    /**     * @Function: ç”ŸæˆRSAç­¾åå€¼     * @param pbData     * @param ulDataLen     * @param pbSignature     * @param pulSignLen     * @return     */    public native long SKF_RSASignData(byte[] pbData, int ulDataLen,byte[] pbSignature,Integer pulSignLen);    /**     * @Function: RSAéªŒç­¾     * @param Blob     * @param pbData     * @param ulDatalen     * @param pbSignature     * @param ulSignLen     * @return     */    public native long SKF_RSAVerify(SKFType.RSAPUBLICKEYBLOB Blob, byte[] pbData, int ulDatalen, byte[] pbSignature, int ulSignLen);    static {        System.loadLibrary("SKFJni");    }}

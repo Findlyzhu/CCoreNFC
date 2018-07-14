@@ -4,26 +4,26 @@ package com.ccore.jni;
 import android.util.Log;
 
 /**
- * ©¥©¥©¥©¥©¥©¥ÉñÊŞ³öÃ»©¥©¥©¥©¥©¥©¥
- * ¡¡¡¡ ©³©·     ©³©·
- * ¡¡¡¡©³©¿©ß©¥©¥©¥©¥©¥©¿©ß©·
- * ¡¡¡¡©§¡¡¡¡¡¡¡¡¡¡ ©§
- * ¡¡¡¡©§¡¡¡¡©¥¡¡¡¡¡¡©§
- * ¡¡¡¡©§¡¡©×©¿¡¡©»©×  ©§
- * ¡¡¡¡©§¡¡¡¡¡¡¡¡¡¡ ©§
- * ¡¡¡¡©§¡¡¡¡©ß¡¡¡¡¡¡©§
- * ¡¡¡¡©§¡¡¡¡¡¡¡¡¡¡ ©§
- * ¡¡¡¡©»©¥©·¡¡¡¡¡¡©³©¥©¿¡¡Code is far away from bug with the animal protecting
- * ¡¡¡¡¡¡ ©§¡¡¡¡¡¡©§    ÉñÊŞ±£ÓÓ,´úÂëÎŞbug
- * ¡¡¡¡¡¡¡¡©§¡¡¡¡¡¡©§
- * ¡¡¡¡¡¡¡¡©§¡¡¡¡¡¡©»©¥©¥©¥©·
- * ¡¡¡¡¡¡¡¡©§¡¡¡¡¡¡¡¡¡¡¡¡©Ç©·
- * ¡¡¡¡¡¡¡¡©§¡¡¡¡¡¡¡¡¡¡¡¡©³©¿
- * ¡¡¡¡¡¡¡¡©»©·©·©³©¥©×©·©³©¿
- * ¡¡¡¡¡¡¡¡ ©§©Ï©Ï ©§©Ï©Ï
- * ¡¡¡¡¡¡¡¡ ©»©ß©¿ ©»©ß©¿
+ * â”â”â”â”â”â”ç¥å…½å‡ºæ²¡â”â”â”â”â”â”
+ * ã€€ã€€ â”â”“     â”â”“
+ * ã€€ã€€â”â”›â”»â”â”â”â”â”â”›â”»â”“
+ * ã€€ã€€â”ƒã€€ã€€ã€€ã€€ã€€ â”ƒ
+ * ã€€ã€€â”ƒã€€ã€€â”ã€€ã€€ã€€â”ƒ
+ * ã€€ã€€â”ƒã€€â”³â”›ã€€â”—â”³  â”ƒ
+ * ã€€ã€€â”ƒã€€ã€€ã€€ã€€ã€€ â”ƒ
+ * ã€€ã€€â”ƒã€€ã€€â”»ã€€ã€€ã€€â”ƒ
+ * ã€€ã€€â”ƒã€€ã€€ã€€ã€€ã€€ â”ƒ
+ * ã€€ã€€â”—â”â”“ã€€ã€€ã€€â”â”â”›ã€€Code is far away from bug with the animal protecting
+ * ã€€ã€€ã€€ â”ƒã€€ã€€ã€€â”ƒ    ç¥å…½ä¿ä½‘,ä»£ç æ— bug
+ * ã€€ã€€ã€€ã€€â”ƒã€€ã€€ã€€â”ƒ
+ * ã€€ã€€ã€€ã€€â”ƒã€€ã€€ã€€â”—â”â”â”â”“
+ * ã€€ã€€ã€€ã€€â”ƒã€€ã€€ã€€ã€€ã€€ã€€â”£â”“
+ * ã€€ã€€ã€€ã€€â”ƒã€€ã€€ã€€ã€€ã€€ã€€â”â”›
+ * ã€€ã€€ã€€ã€€â”—â”“â”“â”â”â”³â”“â”â”›
+ * ã€€ã€€ã€€ã€€ â”ƒâ”«â”« â”ƒâ”«â”«
+ * ã€€ã€€ã€€ã€€ â”—â”»â”› â”—â”»â”›
  * <p>
- * ©¥©¥©¥©¥©¥©¥¸Ğ¾õÃÈÃÈßÕ©¥©¥©¥©¥©¥©¥
+ * â”â”â”â”â”â”æ„Ÿè§‰èŒèŒå“’â”â”â”â”â”â”
  *
  * @Author Findly_zhu
  * @DATE 2018/7/13 10:28
@@ -40,29 +40,29 @@ public class SKFType {
 
     public static final int MAX_IV_LEN                       = 32;
 
-    public static final int ADMIN_TYPE			             = 0;				//¹ÜÀíÔ± PIN ÀàĞÍ
-    public static final int USER_TYPE			             = 1;				//ÓÃ»§ PIN ÀàĞÍ
+    public static final int ADMIN_TYPE			             = 0;				//ç®¡ç†å‘˜ PIN ç±»å‹
+    public static final int USER_TYPE			             = 1;				//ç”¨æˆ· PIN ç±»å‹
 
 
-    public static final int SECURE_NEVER_ACCOUNT	         = 0x00;		//²»ÔÊĞí
-    public static final int SECURE_ADM_ACCOUNT		         = 0x01;		//¹ÜÀíÔ±È¨ÏŞ
-    public static final int SECURE_USER_ACCOUNT		         = 0x10;		//ÓÃ»§È¨ÏŞ
-    public static final int SECURE_ANYONE_ACCOUNT	         = 0xFF;		//ÈÎºÎÈË
+    public static final int SECURE_NEVER_ACCOUNT	         = 0x00;		//ä¸å…è®¸
+    public static final int SECURE_ADM_ACCOUNT		         = 0x01;		//ç®¡ç†å‘˜æƒé™
+    public static final int SECURE_USER_ACCOUNT		         = 0x10;		//ç”¨æˆ·æƒé™
+    public static final int SECURE_ANYONE_ACCOUNT	         = 0xFF;		//ä»»ä½•äºº
 
     public static final int MIN_PIN_LEN				         = 0x06;
     public static final int MAX_PIN_LEN			             = 0x10;
 
 
-    public static final int DEV_ABSENT_STATE		         = 0x00000000;	  //Éè±¸²»´æÔÚ
-    public static final int DEV_PRESENT_STATE		         = 0x00000001;    //Éè±¸´æÔÚ
-    public static final int DEV_UNKNOW_STATE		         = 0x00000002;    //Éè±¸×´Ì¬Î´Öª
+    public static final int DEV_ABSENT_STATE		         = 0x00000000;	  //è®¾å¤‡ä¸å­˜åœ¨
+    public static final int DEV_PRESENT_STATE		         = 0x00000001;    //è®¾å¤‡å­˜åœ¨
+    public static final int DEV_UNKNOW_STATE		         = 0x00000002;    //è®¾å¤‡çŠ¶æ€æœªçŸ¥
 
     public static final int PKCS5_PADDING			         = 1;
     public static final int NO_PADDING				         = 0;
 
  
     /**
-     * @Function: °æ±¾½á¹¹Ìå
+     * @Function: ç‰ˆæœ¬ç»“æ„ä½“
     **/
     //@StructClass
     public class VERSION{
@@ -73,7 +73,7 @@ public class SKFType {
     }
 
     /**
-     * @Function: Éè±¸ĞÅÏ¢½á¹¹Ìå
+     * @Function: è®¾å¤‡ä¿¡æ¯ç»“æ„ä½“
     **/
     //@StructClass
     public class DEVINFO{
@@ -120,7 +120,7 @@ public class SKFType {
     }
 
     /**
-     * @Function: RSA¹«Ô¿½á¹¹Ìå
+     * @Function: RSAå…¬é’¥ç»“æ„ä½“
     **/
     //@StructClass
     public class RSAPUBLICKEYBLOB{
@@ -135,7 +135,7 @@ public class SKFType {
     }
 
     /**
-     * @Function: RSAÃÜÔ¿¶Ô½á¹¹Ìå
+     * @Function: RSAå¯†é’¥å¯¹ç»“æ„ä½“
     **/
     //@StructClass
     public class RSAPRIVATEKEYBLOB{
@@ -162,7 +162,7 @@ public class SKFType {
     }
 
     /**
-     * @Function: ECC¹«Ô¿½á¹¹Ìå
+     * @Function: ECCå…¬é’¥ç»“æ„ä½“
     **/
     //@StructClass
     public class ECCPUBLICKEYBLOB{
@@ -175,7 +175,7 @@ public class SKFType {
     }
 
     /**
-     * @Function: ECCÃÜÔ¿¶Ô½á¹¹Ìå
+     * @Function: ECCå¯†é’¥å¯¹ç»“æ„ä½“
      **/
     //@StructClass
     public class ECCPRIVATEKEYBLOB{
@@ -186,7 +186,7 @@ public class SKFType {
     }
 
     /**
-     * @Function: ECC¼ÓÃÜÊı¾İ½á¹¹Ìå
+     * @Function: ECCåŠ å¯†æ•°æ®ç»“æ„ä½“
      **/
     //@StructClass
     public class ECCCIPHERBLOB{
@@ -203,7 +203,7 @@ public class SKFType {
     }
 
     /**
-     * @Function: ECCÇ©ÃûÖµ½á¹¹Ìå
+     * @Function: ECCç­¾åå€¼ç»“æ„ä½“
      **/
     //@StructClass
     public class ECCSIGNATUREBLOB{
@@ -214,26 +214,26 @@ public class SKFType {
     }
 
     /**
-     * @Function: ECCÇ©ÃûÖµ½á¹¹Ìå
+     * @Function: ECCç­¾åå€¼ç»“æ„ä½“
      **/
     //@StructClass
     public class ENVELOPEDKEYBLOB{
     //    @StructField(order = 0)
-        public int		Version;					            // µ±Ç°°æ±¾Îª 1
+        public int		Version;					            // å½“å‰ç‰ˆæœ¬ä¸º 1
     //    @StructField(order = 1)
-        public int		ulSymmAlgID;				            // ¶Ô³ÆËã·¨±êÊ¶£¬ÏŞ¶¨ECBÄ£Ê½
+        public int		ulSymmAlgID;				            // å¯¹ç§°ç®—æ³•æ ‡è¯†ï¼Œé™å®šECBæ¨¡å¼
     //    @StructField(order = 2)
-        public int		ulBits;						            // ¼ÓÃÜÃÜÔ¿¶ÔµÄÃÜÔ¿Î»³¤¶È
+        public int		ulBits;						            // åŠ å¯†å¯†é’¥å¯¹çš„å¯†é’¥ä½é•¿åº¦
     //    @StructField(order = 3)
-        public byte[]   cbEncryptedPriKey = new byte[64];		// ¼ÓÃÜÃÜÔ¿¶ÔË½Ô¿µÄÃÜÎÄ
+        public byte[]   cbEncryptedPriKey = new byte[64];		// åŠ å¯†å¯†é’¥å¯¹ç§é’¥çš„å¯†æ–‡
     //    @StructField(order = 4)
-        ECCPUBLICKEYBLOB PubKey;        // ¼ÓÃÜÃÜÔ¿¶ÔµÄ¹«Ô¿
+        ECCPUBLICKEYBLOB PubKey;        // åŠ å¯†å¯†é’¥å¯¹çš„å…¬é’¥
     //    @StructField(order = 5)
-        ECCCIPHERBLOB ECCCipherBlob;    // ÓÃ±£»¤¹«Ô¿¼ÓÃÜµÄ¶Ô³ÆÃÜÔ¿ÃÜÎÄ¡£
+        ECCCIPHERBLOB ECCCipherBlob;    // ç”¨ä¿æŠ¤å…¬é’¥åŠ å¯†çš„å¯¹ç§°å¯†é’¥å¯†æ–‡ã€‚
     }
 
     /**
-     * @Function: ¶Ô³ÆËã·¨²ÎÊı½á¹¹Ìå
+     * @Function: å¯¹ç§°ç®—æ³•å‚æ•°ç»“æ„ä½“
      **/
     //@StructClass
     public class BLOCKCIPHERPARAM{
@@ -248,7 +248,7 @@ public class SKFType {
     }
 
     /**
-     * @Function: ÎÄ¼şÊôĞÔ½á¹¹Ìå
+     * @Function: æ–‡ä»¶å±æ€§ç»“æ„ä½“
     **/
     //@StructClass
     public class FILEATTRIBUTE {
@@ -266,51 +266,51 @@ public class SKFType {
     /**
      * @Function: algorithm ID
     **/
-    public static final int SGD_SM1_ECB			         = 0x00000101;       //SM1 Ëã·¨ ECB ¼ÓÃÜÄ£Ê½
-    public static final int SGD_SM1_CBC			         = 0x00000102;       //SM1 Ëã·¨ CBC ¼ÓÃÜÄ£Ê½
-    public static final int SGD_SM1_CFB			         = 0x00000104;       //SM1 Ëã·¨ CFB ¼ÓÃÜÄ£Ê½
-    public static final int SGD_SM1_OFB			         = 0x00000108;       //SM1 Ëã·¨ OFB ¼ÓÃÜÄ£Ê½
-    public static final int SGD_SM1_MAC			         = 0x00000110;       //SM1 Ëã·¨ MAC ÔËËã
-    public static final int SGD_SSF33_ECB                   = 0x00000201;       //SSF33 Ëã·¨ ECB ¼ÓÃÜÄ£Ê½
-    public static final int SGD_SSF33_CBC                   = 0x00000202;       //SSF33 Ëã·¨ CBC ¼ÓÃÜÄ£Ê½
-    public static final int SGD_SSF33_CFB                   = 0x00000204;       //SSF33 Ëã·¨ CFB ¼ÓÃÜÄ£Ê½
-    public static final int SGD_SSF33_OFB                   = 0x00000208;       //SSF33 Ëã·¨ OFB ¼ÓÃÜÄ£Ê½
-    public static final int SGD_SSF33_MAC                   = 0x00000210;       //SSF33 Ëã·¨ MAC ÔËËã
-    public static final int SGD_SMS4_ECB		             = 0x00000401;       //SMS4 Ëã·¨ ECB ¼ÓÃÜÄ£Ê½
-    public static final int SGD_SMS4_CBC		             = 0x00000402;       //SMS4 Ëã·¨ CBC ¼ÓÃÜÄ£Ê½
-    public static final int SGD_SMS4_CFB		             = 0x00000404;       //SMS4 Ëã·¨ CFB ¼ÓÃÜÄ£Ê½
-    public static final int SGD_SMS4_OFB		             = 0x00000408;       //SMS4 Ëã·¨ OFB ¼ÓÃÜÄ£Ê½
-    public static final int SGD_SMS4_MAC		             = 0x00000410;       //SMS4 Ëã·¨ MAC ÔËËã
+    public static final int SGD_SM1_ECB			         = 0x00000101;       //SM1 ç®—æ³• ECB åŠ å¯†æ¨¡å¼
+    public static final int SGD_SM1_CBC			         = 0x00000102;       //SM1 ç®—æ³• CBC åŠ å¯†æ¨¡å¼
+    public static final int SGD_SM1_CFB			         = 0x00000104;       //SM1 ç®—æ³• CFB åŠ å¯†æ¨¡å¼
+    public static final int SGD_SM1_OFB			         = 0x00000108;       //SM1 ç®—æ³• OFB åŠ å¯†æ¨¡å¼
+    public static final int SGD_SM1_MAC			         = 0x00000110;       //SM1 ç®—æ³• MAC è¿ç®—
+    public static final int SGD_SSF33_ECB                   = 0x00000201;       //SSF33 ç®—æ³• ECB åŠ å¯†æ¨¡å¼
+    public static final int SGD_SSF33_CBC                   = 0x00000202;       //SSF33 ç®—æ³• CBC åŠ å¯†æ¨¡å¼
+    public static final int SGD_SSF33_CFB                   = 0x00000204;       //SSF33 ç®—æ³• CFB åŠ å¯†æ¨¡å¼
+    public static final int SGD_SSF33_OFB                   = 0x00000208;       //SSF33 ç®—æ³• OFB åŠ å¯†æ¨¡å¼
+    public static final int SGD_SSF33_MAC                   = 0x00000210;       //SSF33 ç®—æ³• MAC è¿ç®—
+    public static final int SGD_SMS4_ECB		             = 0x00000401;       //SMS4 ç®—æ³• ECB åŠ å¯†æ¨¡å¼
+    public static final int SGD_SMS4_CBC		             = 0x00000402;       //SMS4 ç®—æ³• CBC åŠ å¯†æ¨¡å¼
+    public static final int SGD_SMS4_CFB		             = 0x00000404;       //SMS4 ç®—æ³• CFB åŠ å¯†æ¨¡å¼
+    public static final int SGD_SMS4_OFB		             = 0x00000408;       //SMS4 ç®—æ³• OFB åŠ å¯†æ¨¡å¼
+    public static final int SGD_SMS4_MAC		             = 0x00000410;       //SMS4 ç®—æ³• MAC è¿ç®—
 
-    public static final int SGD_RSA				         = 0x00010000;       //RSA Ëã·¨
-    public static final int SGD_SM2				         = 0x00020000;       //SM2 Ëã·¨
-    public static final int SGD_SM2_1			             = 0x00020100;       //ÍÖÔ²ÇúÏßÇ©ÃûËã·¨
-    public static final int SGD_SM2_2			             = 0x00020200;       //ÍÖÔ²ÇúÏßÃÜÔ¿½»»»Ğ­Òé
-    public static final int SGD_SM2_3			             = 0x00020400;       //ÍÖÔ²ÇúÏß¼ÓÃÜËã·¨
-    public static final int SGD_SM3				         = 0x00000001;       //SM3 ÔÓ´ÕËã·¨
-    public static final int SGD_SHA1			             = 0x00000002;       //SHA1 ÔÓ´ÕËã·¨
-    public static final int SGD_SHA256			             = 0x00000004;       //SHA256 ÔÓ´ÕËã·¨
+    public static final int SGD_RSA				         = 0x00010000;       //RSA ç®—æ³•
+    public static final int SGD_SM2				         = 0x00020000;       //SM2 ç®—æ³•
+    public static final int SGD_SM2_1			             = 0x00020100;       //æ¤­åœ†æ›²çº¿ç­¾åç®—æ³•
+    public static final int SGD_SM2_2			             = 0x00020200;       //æ¤­åœ†æ›²çº¿å¯†é’¥äº¤æ¢åè®®
+    public static final int SGD_SM2_3			             = 0x00020400;       //æ¤­åœ†æ›²çº¿åŠ å¯†ç®—æ³•
+    public static final int SGD_SM3				         = 0x00000001;       //SM3 æ‚å‡‘ç®—æ³•
+    public static final int SGD_SHA1			             = 0x00000002;       //SHA1 æ‚å‡‘ç®—æ³•
+    public static final int SGD_SHA256			             = 0x00000004;       //SHA256 æ‚å‡‘ç®—æ³•
 
 
     ////////////////////////////VENDOR DEFINED/////////////////////////////////////
-    public static final int SGD_DES_ECB			         = 0x80000101;       //DES Ëã·¨ ECB ¼ÓÃÜÄ£Ê½
-    public static final int SGD_DES_CBC			         = 0x80000102;       //DES Ëã·¨ CBC ¼ÓÃÜÄ£Ê½
-    public static final int SGD_DES_CFB			         = 0x80000104;       //DES Ëã·¨ CFB ¼ÓÃÜÄ£Ê½
-    public static final int SGD_DES_OFB			         = 0x80000108;       //DES Ëã·¨ OFB ¼ÓÃÜÄ£Ê½
-    public static final int SGD_DES_MAC			         = 0x80000110;       //DES Ëã·¨ MAC ÔËËã
-    public static final int SGD_AES_ECB			         = 0x80000201;       //AES-128 Ëã·¨ ECB ¼ÓÃÜÄ£Ê½
-    public static final int SGD_AES_CBC			         = 0x80000202;       //AES-128 Ëã·¨ CBC ¼ÓÃÜÄ£Ê½
-    public static final int SGD_AES_CFB			         = 0x80000204;       //AES-128 Ëã·¨ CFB ¼ÓÃÜÄ£Ê½
-    public static final int SGD_AES_OFB			         = 0x80000208;       //AES-128 Ëã·¨ OFB ¼ÓÃÜÄ£Ê½
-    public static final int SGD_AES_MAC			         = 0x80000210;       //AES-128 Ëã·¨ MAC ÔËËã
-    public static final int SGD_SM6_ECB			         = 0x80000301;       //SM6 Ëã·¨ ECB ¼ÓÃÜÄ£Ê½
-    public static final int SGD_SM6_CBC			         = 0x80000302;       //SM6 Ëã·¨ CBC ¼ÓÃÜÄ£Ê½
-    public static final int SGD_SM6_CFB			         = 0x80000304;       //SM6 Ëã·¨ CFB ¼ÓÃÜÄ£Ê½
-    public static final int SGD_SM6_OFB			         = 0x80000308;       //SM6 Ëã·¨ OFB ¼ÓÃÜÄ£Ê½
-    public static final int SGD_SM6_MAC			         = 0x80000310;       //SM6 Ëã·¨ MAC ÔËËã
+    public static final int SGD_DES_ECB			         = 0x80000101;       //DES ç®—æ³• ECB åŠ å¯†æ¨¡å¼
+    public static final int SGD_DES_CBC			         = 0x80000102;       //DES ç®—æ³• CBC åŠ å¯†æ¨¡å¼
+    public static final int SGD_DES_CFB			         = 0x80000104;       //DES ç®—æ³• CFB åŠ å¯†æ¨¡å¼
+    public static final int SGD_DES_OFB			         = 0x80000108;       //DES ç®—æ³• OFB åŠ å¯†æ¨¡å¼
+    public static final int SGD_DES_MAC			         = 0x80000110;       //DES ç®—æ³• MAC è¿ç®—
+    public static final int SGD_AES_ECB			         = 0x80000201;       //AES-128 ç®—æ³• ECB åŠ å¯†æ¨¡å¼
+    public static final int SGD_AES_CBC			         = 0x80000202;       //AES-128 ç®—æ³• CBC åŠ å¯†æ¨¡å¼
+    public static final int SGD_AES_CFB			         = 0x80000204;       //AES-128 ç®—æ³• CFB åŠ å¯†æ¨¡å¼
+    public static final int SGD_AES_OFB			         = 0x80000208;       //AES-128 ç®—æ³• OFB åŠ å¯†æ¨¡å¼
+    public static final int SGD_AES_MAC			         = 0x80000210;       //AES-128 ç®—æ³• MAC è¿ç®—
+    public static final int SGD_SM6_ECB			         = 0x80000301;       //SM6 ç®—æ³• ECB åŠ å¯†æ¨¡å¼
+    public static final int SGD_SM6_CBC			         = 0x80000302;       //SM6 ç®—æ³• CBC åŠ å¯†æ¨¡å¼
+    public static final int SGD_SM6_CFB			         = 0x80000304;       //SM6 ç®—æ³• CFB åŠ å¯†æ¨¡å¼
+    public static final int SGD_SM6_OFB			         = 0x80000308;       //SM6 ç®—æ³• OFB åŠ å¯†æ¨¡å¼
+    public static final int SGD_SM6_MAC			         = 0x80000310;       //SM6 ç®—æ³• MAC è¿ç®—
 
     /**
-     * @Function: ÒÔÏÂºêÓÃÓÚV_GenerateKeyº¯ÊıulAlgId²ÎÊı
+     * @Function: ä»¥ä¸‹å®ç”¨äºV_GenerateKeyå‡½æ•°ulAlgIdå‚æ•°
     **/
     public static final int GENERATE_KEY_USAGE_SIGN		 = 0x00001000;
     public static final int GENERATE_KEY_USAGE_ENCRYPT	     = 0x00002000;
@@ -341,7 +341,7 @@ public class SKFType {
     public static final int GENERATE_KEY_BIT_MASK		     = 0xFFFF0000;
 
     /**
-     * @Function: ·µ»ØÖµ´íÎóÂë
+     * @Function: è¿”å›å€¼é”™è¯¯ç 
     **/
     public static final int SAR_OK							 = 0x00000000;
     public static final int SAR_FAIL						 = 0x0A000001;

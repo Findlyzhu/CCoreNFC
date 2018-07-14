@@ -51,6 +51,50 @@ char * Jstring2CStr( JNIEnv * env, jstring jstr )
     return rtn;
 }
 
+long SetStringValue(JNIEnv*  env,jobject jobj,char *paramchar){
+    long uiRet = 0;
+    LOGE("SetStringValue----Begin");
+
+    jstring p = CStr2Jstring(env,paramchar);
+
+    jclass jclaz = (*env)->FindClass(env,"java/lang/String");
+    if (NULL == jclaz)
+    {
+        LOGE("FindClass----Fail");
+        return SAR_UNKOWNERR;
+    }
+    jfieldID valueId = (*env)->GetFieldID(env,jclaz, "name", "Ljava/lang/String");
+    if (NULL == valueId)
+    {
+        LOGE("GetFiledID failed");
+        return SAR_UNKOWNERR;
+    }
+    (*env)->SetObjectField(env, jobj, valueId,p);
+    LOGE("SetIntegerValue----End");
+    return uiRet;
+}
+
+long SetIntegerValue(JNIEnv*  env,jobject jobj,jint paramInt){
+    long uiRet = 0;
+    LOGE("SetIntegerValue----Begin");
+    jclass jclaz = (*env)->FindClass(env,"java/lang/Integer");
+    if (NULL == jclaz)
+    {
+        LOGE("FindClass----Fail");
+        return SAR_UNKOWNERR;
+    }
+    jfieldID valueId = (*env)->GetFieldID(env,jclaz, "value", "I");
+    if (NULL == valueId)
+    {
+        LOGE("GetFiledID failed");
+        return SAR_UNKOWNERR;
+    }
+
+    (*env)->SetIntField(env,jobj,valueId, paramInt);
+    LOGE("SetIntegerValue----End");
+    return uiRet;
+}
+
 
 long SetByteArryField(JNIEnv* env,jobject paramObj,jfieldID jfied,char* pSrcParam){
     LOGE("SetByteArryField,Begin,pSrcParam = %s",pSrcParam);
