@@ -117,6 +117,7 @@
                 android:textStyle="normal|bold" />
 
             <ImageView
+                android:id="@+id/infoimg"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:src="@drawable/logo" />

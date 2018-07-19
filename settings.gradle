@@ -1,1 +1,1 @@
-include ':app', ':skfjni'
+include ':app', ':skfjni', ':nfcjni'

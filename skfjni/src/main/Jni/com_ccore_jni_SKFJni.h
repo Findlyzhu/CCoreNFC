@@ -399,6 +399,14 @@ JNIEXPORT jlong JNICALL Java_com_ccore_jni_SKFJni_SKF_1RSASignData
 JNIEXPORT jlong JNICALL Java_com_ccore_jni_SKFJni_SKF_1RSAVerify
   (JNIEnv *, jobject, jobject, jbyteArray, jint, jbyteArray, jint);
 
+/*
+ * Class:     com_ccore_jni_SKFJni
+ * Method:    V_SetNFC_Class
+ * Signature: (Lcom/ccore/jni/NFCJni;)J
+ */
+JNIEXPORT jlong JNICALL Java_com_ccore_jni_SKFJni_V_1SetNFC_1Class
+  (JNIEnv *, jobject, jobject);
+
 #ifdef __cplusplus
 }
 #endif

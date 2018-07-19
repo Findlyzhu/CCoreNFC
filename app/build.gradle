@@ -9,8 +9,8 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        ndk{
-            moduleName "libSKFJni"
+        ndk {
+//            moduleName "libSKFJni"
             ldLibs "log"
         }
     }
@@ -20,8 +20,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    repositories{
-        flatDir{
+    repositories {
+        flatDir {
             dir 'libs'
         }
     }
@@ -41,6 +41,6 @@ dependencies {
     //implementation files('libs/javastruct-0.1.jar')
     //compile(name:'ccorelibrary-debug',ext:'aar')
     //compile(name:'skfjni-debug',ext:'aar')
-    implementation project(':skfjni')
     implementation files('libs/javastruct-0.1.jar')
+    implementation project(':nfcjni')
 }

@@ -3,11 +3,17 @@
 #ifndef ANDROID
 #define ANDROID
 #endif
-
+typedef struct __android_nfc_dev {
+	JNIEnv*			env;
+	jobject 		obj;
+} NFC_DEV;
+NFC_DEV nfc_res = {0};
 DEVHANDLE hDev = NULL_PTR;
 HANDLE * hKey = NULL_PTR;
 HAPPLICATION * hAppHandle = NULL_PTR;
 HCONTAINER * hContainerHandle = NULL_PTR;
+
+
 
 JNIEXPORT jlong JNICALL Java_com_ccore_jni_SKFJni_SKF_1EnumDev
         (JNIEnv * env, jobject thiz, jboolean bPresent,jcharArray pbDevNameList){
@@ -28,7 +34,7 @@ JNIEXPORT jlong JNICALL Java_com_ccore_jni_SKFJni_SKF_1EnumDev
             LOGE("SKF_EnumDev End,uiRet = %d",uiRet);
             break;
         }
-        LOGE("jbyteDevnameList = %s,ulSize = %d",plist,ulSize);
+        //LOGE("jbyteDevnameList = %s,ulSize = %d",plist,ulSize);
         jchar* devlist = (jchar*)szNameList;
         //(*env)->SetCharArrayRegion(env,pbDevNameList, 0, ulSize, devlist);
         //有可能只能返回第一个设备路径
@@ -52,7 +58,7 @@ JNIEXPORT jlong JNICALL Java_com_ccore_jni_SKFJni_SKF_1ConnectDev(
 	ULONG uiRet = 0;
 	LPSTR szNameList = (LPSTR)malloc(1024);
 	ULONG pulSize = 1024;
-
+    /*
     LOGE("SKF_SO CALL:SKF_EnumDev");
 
 	uiRet = SKF_EnumDev(1, szNameList, &pulSize);
@@ -60,11 +66,15 @@ JNIEXPORT jlong JNICALL Java_com_ccore_jni_SKFJni_SKF_1ConnectDev(
 	if(uiRet){
 		free(szNameList);
 		return uiRet;
-	}
+	}*/
     LOGE("SKF_SO CALL:SKF_ConnectDev");
-	uiRet = SKF_ConnectDev((LPSTR)szNameList, &hDev);
-	LOGE("SKF_ConnectDev----return:%d , szNameList:=%s", uiRet,szNameList);
-	free(szNameList);
+    LOGE("env:%p",nfc_res.env);
+    LOGE("obj:0x%08x",nfc_res.obj);
+    jclass clazz = (*(nfc_res.env))->GetObjectClass(nfc_res.env,nfc_res.obj);//获取该对象的类
+    LOGE("clazz:%p",clazz);
+	//uiRet = SKF_ConnectDev((LPSTR)szNameList, &hDev);
+	//LOGE("SKF_ConnectDev----return:%d , szNameList:=%s", uiRet,szNameList);
+	//free(szNameList);
 	return uiRet;
 }
 
@@ -191,4 +201,38 @@ JNIEXPORT jlong JNICALL Java_com_ccore_jni_SKFJni_SKF_1SetAppPath(
     LOGE("SKF_SetAppPath_JNI----return = %d",uiRet);
     (*env)->ReleaseStringUTFChars(env,szAppPath,appPath);
 	return uiRet;
+}
+
+JNIEXPORT jlong JNICALL Java_com_ccore_jni_SKFJni_V_1SetNFC_1Class(
+		JNIEnv *env, jobject obj, jobject nfcobj) {
+    int ret = 0;
+	unsigned long uiRet = 0;
+
+
+    LOGE("V_SetDecRes_JNI----Enter");
+    nfc_res.env = env;
+    LOGE("env:%p",nfc_res.env);
+    nfc_res.obj = nfcobj;
+    LOGE("obj:0x%08x",nfc_res.obj);
+
+    jclass clazz = (*(nfc_res.env))->GetObjectClass(nfc_res.env,nfc_res.obj);//获取该对象的类
+    LOGE("clazz:%p",clazz);
+    jmethodID fid =(*(nfc_res.env))->GetMethodID(nfc_res.env,clazz, "opendev", "()I");//获取JAVA方法的ID
+    LOGE("jmethodID:%p",fid);
+    LOGE("V_SetDevRes In：%p\n",&nfc_res);
+    uiRet = V_SetDevRes(&nfc_res);
+    LOGE("V_SetDecRes_JNI----return = %d",uiRet);
+/*
+    LOGE("Java_com_ccore_jni_SKFJni_V_1SetNFC_1Class NFC");
+    LOGE("JNIEnv:%p jobject:%p nfcobj:%p",env,obj,nfcobj);
+    jclass clazz = (*env)->GetObjectClass(env,nfcobj);//获取该对象的类
+    LOGE("clazz:%p",clazz);
+    jmethodID fid =(*env)->GetMethodID(env,clazz, "opendev", "()I");//获取JAVA方法的ID
+    LOGE("jmethodID:%p",fid);
+    ret = (*env)->CallIntMethod(env,nfcobj,fid);
+    jmethodID fid1 =(*env)->GetMethodID(env,clazz, "closedev", "()I");//获取JAVA方法的ID
+    LOGE("jmethodID:%p",fid);
+    ret = (*env)->CallIntMethod(env,nfcobj,fid1);
+    */
+    return uiRet;
 }
